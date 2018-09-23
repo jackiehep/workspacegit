@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+
+</div>
+<script>
+    var name="heyixuan";
+
+    function  test(id ,name) {
+        this.id=id;
+        this.name=name;
+        this.func=function(){
+            if(this.id==1)
+                return this.name;
+            else return function()//匿名函数具有全局性
+            {
+                return this.name;
+            }
+        }
+
+    }
+    var tt=new test(2,"jackie");
+    alert(tt.func()());
+
+</script>
+</body>
+</html>

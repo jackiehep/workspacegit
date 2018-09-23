@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="test">
+
+</div>
+<script>
+    var myarr=new Array();
+    for (var i=0;i<10;i++)
+        myarr[i]=new Array();
+
+    function setArrayVal(row)
+    {
+        for(var j=0;j<row;j++)
+            for(var k=0;k<10;k++)
+                myarr[j][k]="jackie "+j+" "+k;
+    }
+
+    function showArrayVal(row,col)
+    {
+
+        return (myarr[row][col]);
+    }
+    var divval=document.getElementById('test');
+    divval.innerHTML="jackie hepeng";
+    divval.style.backgroundColor='red';
+    divval.style.setProperty('color','black');
+    setArrayVal(10);
+
+    function showArrayData()
+    {
+        for(var l=0;l<10;l++)
+            for(var m=0;m<10;m++)
+            {
+                var val=showArrayVal(l,m);
+                document.write('<span> dialog book is mine' +val+'</span>');
+
+            }
+    }
+    showArrayData();
+    function formatData()
+    {
+        var elements=document.getElementsByTagName('span');
+        for(var p=0;p<elements.length;p++)
+        {
+            if(p%2==0) {
+                elements[p].style.backgroundColor = 'red';
+                elements[p].style.setProperty('color','green');
+            }else{
+                elements[p].style.backgroundColor = 'green';
+                elements[p].style.setProperty('color','black');
+            }
+        }
+    }
+    formatData();
+</script>
+</body>
+</html>
